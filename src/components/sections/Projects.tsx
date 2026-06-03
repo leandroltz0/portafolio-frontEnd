@@ -5,9 +5,9 @@ import { siAngular, siExpress, siPostgresql, siGithub } from "simple-icons";
 import { IconCloud } from "@tabler/icons-react";
 
 const techIconMap: Record<string, any> = {
-  "Angular 19": { type: "simple", icon: siAngular },
-  "Express": { type: "simple", icon: siExpress },
-  "PostgreSQL": { type: "simple", icon: siPostgresql },
+  "Angular 19": { type: "simple", icon: siAngular, color: "#DD0031" },
+  "Express": { type: "simple", icon: siExpress, color: "#FFFFFF" },
+  "PostgreSQL": { type: "simple", icon: siPostgresql, color: `#${siPostgresql.hex}` },
   "OpenWeatherMap": { type: "tabler", icon: IconCloud },
 };
 
@@ -16,7 +16,7 @@ function TechIcon({ name }: { name: string }) {
   if (!data) return null;
   if (data.type === "simple") {
     return (
-      <svg viewBox="0 0 24 24" fill={name === "Express" ? "#FFF" : `#${data.icon.hex}`} width="12" height="12">
+      <svg viewBox="0 0 24 24" fill={data.color} width="12" height="12">
         <path d={data.icon.path} />
       </svg>
     );
