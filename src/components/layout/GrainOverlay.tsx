@@ -1,5 +1,3 @@
-"use client";
-
 export default function GrainOverlay() {
   return (
     <div className="fixed inset-0 z-[9997] pointer-events-none opacity-[0.04]">
