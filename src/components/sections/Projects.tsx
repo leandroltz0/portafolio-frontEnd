@@ -5,8 +5,8 @@ import { projects } from "../../data/projects";
 export default function Projects() {
   return (
     <section id="projects" className="relative px-[clamp(20px,5vw,80px)] pt-[var(--section-pad,48px)] max-w-[1200px] mx-auto">
-      <h2 className="font-heading text-[clamp(32px,4vw,48px)] leading-[1.1] text-foreground text-center mb-3">
-        Projects
+      <h2 className="font-heading text-[clamp(32px,4vw,48px)] leading-[1.1] text-foreground text-center mb-3 flex items-center justify-center gap-3">
+        {"</>"} Projects
       </h2>
       <p className="text-center text-[14px] text-muted-foreground mb-12 tracking-[0.02em]">
         Selected work I've built and shipped
