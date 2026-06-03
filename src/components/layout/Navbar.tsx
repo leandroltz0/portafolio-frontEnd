@@ -1,14 +1,6 @@
-"use client";
-
 import { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "motion/react";
-
-const navItems = [
-  { name: "About", href: "#about" },
-  { name: "Experience", href: "#experience" },
-  { name: "Work", href: "#projects" },
-  { name: "Skills", href: "#skills" },
-];
+import { navItems, mobileNavItems } from "../../data/navigation";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -93,7 +85,7 @@ export default function Navbar() {
             transition={{ duration: 0.3 }}
             className="fixed inset-0 z-[4999] bg-[rgba(5,8,15,0.97)] backdrop-blur-2xl flex flex-col items-center justify-center gap-8"
           >
-            {[...navItems, { name: "Education", href: "#education" }, { name: "Contact", href: "#contact" }].map((item) => (
+            {mobileNavItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
