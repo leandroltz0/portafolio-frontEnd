@@ -23,8 +23,8 @@ export const projects: Project[] = [
     ),
     links: [
       { label: "Sitio Web", href: "#", primary: true },
-      { label: "View Front-End", href: "#", primary: false },
-      { label: "View Back-End", href: "#", primary: false },
+      { label: "View Front-End", href: "https://github.com/leandroltz0/Atmos-web", primary: false },
+      { label: "View Back-End", href: "https://github.com/leandroltz0/atmos-backEnd", primary: false },
     ],
   },
   {

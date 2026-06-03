@@ -124,6 +124,8 @@ export default function Projects() {
                   <a
                     key={link.label}
                     href={link.href}
+                    target={link.href !== "#" && !link.href.startsWith("#") ? "_blank" : undefined}
+                    rel={link.href !== "#" && !link.href.startsWith("#") ? "noopener noreferrer" : undefined}
                     className={`inline-flex whitespace-nowrap items-center shrink-0 gap-2 px-4 py-[8px] sm:px-5 sm:py-[10px] rounded-full text-[11px] sm:text-[12px] font-semibold tracking-[0.04em] transition-all duration-[300ms] ease-[cubic-bezier(0.23,1,0.32,1)] ${
                       link.primary
                         ? "bg-accent text-white shadow-[0_4px_16px_rgba(108,99,255,0.2)] hover:bg-[#5A52E0] hover:-translate-y-[2px] hover:shadow-[0_8px_28px_rgba(108,99,255,0.35)]"
