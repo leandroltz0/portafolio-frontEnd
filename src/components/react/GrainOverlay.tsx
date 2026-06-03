@@ -1,0 +1,15 @@
+"use client";
+
+export default function GrainOverlay() {
+  return (
+    <div className="fixed inset-0 z-[9997] pointer-events-none opacity-[0.04]">
+      <svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" className="w-full h-full">
+        <filter id="noise">
+          <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="3" stitchTiles="stitch" />
+          <feColorMatrix type="saturate" values="0" />
+        </filter>
+        <rect width="300" height="300" filter="url(#noise)" opacity="0.04" />
+      </svg>
+    </div>
+  );
+}

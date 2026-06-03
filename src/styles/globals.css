@@ -1,0 +1,107 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-mono);
+  --font-heading: var(--font-display);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--surface);
+  --color-secondary-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius: 0.625rem;
+}
+
+:root {
+  --background: #05080F;
+  --foreground: #F0F0F0;
+  --surface: #0A0F1A;
+  --card: #0A0F1A;
+  --card-foreground: #F0F0F0;
+  --popover: #0A0F1A;
+  --popover-foreground: #F0F0F0;
+  --primary: #6C63FF;
+  --primary-foreground: #FFFFFF;
+  --muted: #6B7280;
+  --accent: #6C63FF;
+  --accent-foreground: #FFFFFF;
+  --destructive: #FF6B6B;
+  --border: rgba(255, 255, 255, 0.06);
+  --input: rgba(255, 255, 255, 0.08);
+  --ring: #6C63FF;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.08) transparent;
+}
+
+::selection {
+  background: rgba(108, 99, 255, 0.3);
+  color: #fff;
+}
+
+body {
+  cursor: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes bounce-y {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  45% { transform: translateX(-50%) translateY(5px); }
+}
+
+@keyframes pulse-avail {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes ping-exp {
+  75%, 100% { transform: scale(2.5); opacity: 0; }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+
+.animate-bounce-y {
+  animation: bounce-y 2.4s ease-in-out infinite;
+}
+
+.animate-pulse-avail {
+  animation: pulse-avail 2s ease-in-out infinite;
+}
+
+.animate-ping-exp {
+  animation: ping-exp 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@media (hover: none) {
+  body {
+    cursor: auto;
+  }
+}
