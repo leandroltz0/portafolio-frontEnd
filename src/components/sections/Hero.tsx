@@ -1,14 +1,18 @@
-"use client";
-
 import { useEffect, useRef, useMemo } from "react";
 import { motion } from "motion/react";
+import { EASE } from "../../lib/animations";
 import type * as THREE from "three";
+
+// Static data — defined outside component to avoid re-creation on render
+const NAME = "Leandro Maciel";
+const TAGLINE = "I build complete digital products — from design to server.";
+const taglineWords = TAGLINE.split(" ");
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const nameWords = useMemo(
-    () => "Leandro Maciel".split(" ").map(word => word.split("")),
+    () => NAME.split(" ").map((word) => word.split("")),
     []
   );
 
@@ -52,20 +56,20 @@ export default function Hero() {
 
       for (let i = 0; i < particleCount; i++) {
         const i3 = i * 3;
-        positions[i3] = (Math.random() - 0.5) * 28;
+        positions[i3]     = (Math.random() - 0.5) * 28;
         positions[i3 + 1] = (Math.random() - 0.5) * 18;
         positions[i3 + 2] = (Math.random() - 0.5) * 20 - 5;
         const isViolet = Math.random() > 0.5;
-        particleColors[i3] = isViolet ? 108 / 255 : 255 / 255;
-        particleColors[i3 + 1] = isViolet ? 99 / 255 : 107 / 255;
+        particleColors[i3]     = isViolet ? 108 / 255 : 255 / 255;
+        particleColors[i3 + 1] = isViolet ?  99 / 255 : 107 / 255;
         particleColors[i3 + 2] = isViolet ? 255 / 255 : 107 / 255;
         sizes[i] = Math.random() * 2.5 + 0.5;
       }
 
       const particleGeo = new THREE.BufferGeometry();
       particleGeo.setAttribute("position", new THREE.BufferAttribute(positions, 3));
-      particleGeo.setAttribute("color", new THREE.BufferAttribute(particleColors, 3));
-      particleGeo.setAttribute("size", new THREE.BufferAttribute(sizes, 1));
+      particleGeo.setAttribute("color",    new THREE.BufferAttribute(particleColors, 3));
+      particleGeo.setAttribute("size",     new THREE.BufferAttribute(sizes, 1));
 
       const particleMat = new THREE.PointsMaterial({
         size: 0.06,
@@ -79,34 +83,19 @@ export default function Hero() {
       scene.add(particleSystem);
 
       const knotGeo1 = new THREE.TorusKnotGeometry(1.4, 0.45, 128, 16);
-      const knotMat1 = new THREE.MeshBasicMaterial({
-        color: 0x6c63ff,
-        wireframe: true,
-        transparent: true,
-        opacity: 0.08,
-      });
+      const knotMat1 = new THREE.MeshBasicMaterial({ color: 0x6c63ff, wireframe: true, transparent: true, opacity: 0.08 });
       knot1 = new THREE.Mesh(knotGeo1, knotMat1);
       knot1.position.set(-1.5, 0.5, -3);
       scene.add(knot1);
 
       const knotGeo2 = new THREE.TorusKnotGeometry(0.9, 0.3, 96, 12);
-      const knotMat2 = new THREE.MeshBasicMaterial({
-        color: 0xff6b6b,
-        wireframe: true,
-        transparent: true,
-        opacity: 0.06,
-      });
+      const knotMat2 = new THREE.MeshBasicMaterial({ color: 0xff6b6b, wireframe: true, transparent: true, opacity: 0.06 });
       knot2 = new THREE.Mesh(knotGeo2, knotMat2);
       knot2.position.set(2, -1, -2);
       scene.add(knot2);
 
       const icoGeo = new THREE.IcosahedronGeometry(0.8, 1);
-      const icoMat = new THREE.MeshBasicMaterial({
-        color: 0x6c63ff,
-        wireframe: true,
-        transparent: true,
-        opacity: 0.04,
-      });
+      const icoMat = new THREE.MeshBasicMaterial({ color: 0x6c63ff, wireframe: true, transparent: true, opacity: 0.04 });
       ico = new THREE.Mesh(icoGeo, icoMat);
       ico.position.set(0.5, -1.8, -1);
       scene.add(ico);
@@ -128,7 +117,7 @@ export default function Hero() {
         knot1.rotation.y += 0.008;
         knot1.rotation.z += 0.003;
         knot1.position.x = -1.5 + mouseX * 0.6;
-        knot1.position.y = 0.5 + mouseY * 0.4;
+        knot1.position.y =  0.5 + mouseY * 0.4;
 
         knot2.rotation.x += 0.008;
         knot2.rotation.y -= 0.005;
@@ -137,7 +126,7 @@ export default function Hero() {
 
         ico.rotation.x += 0.006;
         ico.rotation.y += 0.01;
-        ico.position.x = 0.5 + mouseX * 0.5;
+        ico.position.x =  0.5 + mouseX * 0.5;
         ico.position.y = -1.8 + mouseY * 0.3;
 
         renderer.render(scene, camera);
@@ -168,7 +157,7 @@ export default function Hero() {
       }
       if (renderer) renderer.setSize(cw, ch);
     };
-    
+
     window.addEventListener("resize", onResize);
 
     return () => {
@@ -176,8 +165,6 @@ export default function Hero() {
       window.removeEventListener("resize", onResize);
     };
   }, []);
-
-  const taglineWords = "I build complete digital products — from design to server.".split(" ");
 
   return (
     <section
@@ -201,11 +188,7 @@ export default function Hero() {
                     className="inline-block"
                     initial={{ opacity: 0, y: 60, rotateX: -30 }}
                     animate={{ opacity: 1, y: 0, rotateX: 0 }}
-                    transition={{
-                      duration: 1.2,
-                      delay: 0.2 + i * 0.03,
-                      ease: [0.16, 1, 0.3, 1],
-                    }}
+                    transition={{ duration: 1.2, delay: 0.2 + i * 0.03, ease: [0.16, 1, 0.3, 1] }}
                   >
                     {char}
                   </motion.span>
@@ -219,7 +202,7 @@ export default function Hero() {
           className="text-[clamp(15px,1.8vw,20px)] font-medium text-muted-foreground tracking-[0.08em] mb-[14px]"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.2, ease: [0.23, 1, 0.32, 1] }}
+          transition={{ duration: 0.8, delay: 1.2, ease: EASE }}
         >
           <span className="text-accent">Full Stack Developer</span> &amp; UI Designer
           <motion.span
@@ -235,7 +218,7 @@ export default function Hero() {
           className="text-[clamp(14px,1.3vw,17px)] text-muted-foreground leading-[1.65] max-w-[580px] mx-auto mb-9"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.4, ease: [0.23, 1, 0.32, 1] }}
+          transition={{ duration: 0.8, delay: 1.4, ease: EASE }}
         >
           {taglineWords.map((word, i) => (
             <motion.span
@@ -243,11 +226,7 @@ export default function Hero() {
               className="inline-block mr-[0.3em]"
               initial={{ opacity: 0, filter: "blur(10px)" }}
               animate={{ opacity: 1, filter: "blur(0px)" }}
-              transition={{
-                duration: 0.6,
-                delay: 1.4 + i * 0.08,
-                ease: [0.23, 1, 0.32, 1],
-              }}
+              transition={{ duration: 0.6, delay: 1.4 + i * 0.08, ease: EASE }}
             >
               {word}
             </motion.span>
@@ -258,7 +237,7 @@ export default function Hero() {
           className="flex gap-[14px] justify-center flex-wrap"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.6, ease: [0.23, 1, 0.32, 1] }}
+          transition={{ duration: 0.8, delay: 1.6, ease: EASE }}
         >
           <a
             href="#projects"
@@ -275,7 +254,7 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Bottom Gradient Fade */}
+      {/* Bottom gradient fade */}
       <div className="absolute bottom-0 left-0 w-full h-[15vh] bg-gradient-to-t from-background to-transparent pointer-events-none z-[2]" />
 
       <div className="absolute bottom-7 left-1/2 -translate-x-1/2 z-[3] flex flex-col items-center gap-[6px] text-muted-foreground text-[9px] tracking-[0.15em] uppercase opacity-35 animate-bounce-y">

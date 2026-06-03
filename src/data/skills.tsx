@@ -3,7 +3,7 @@ import {
   siTailwindcss, siAngular, siSass, siAstro,
   siNodedotjs, siExpress, siNestjs, siPython, siFastapi,
   siMysql, siMongodb, siPostgresql, siDocker,
-  siFigma, siFramer, siGit, siGithub, siGitlab, siVscodium,
+  siFigma, siFramer, siGit, siGithub, siGitlab,
   siSpring, siOpenjdk,
 } from "simple-icons";
 import { IconBrandAws, IconBrandAzure, IconBrandVscode } from "@tabler/icons-react";

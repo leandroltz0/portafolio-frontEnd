@@ -1,61 +1,6 @@
-"use client";
-
 import { motion } from "motion/react";
-
-const projects = [
-  {
-    title: "ATMOS",
-    subtitle: "Real-time weather intelligence platform",
-    tag: "Featured project",
-    description:
-      "Beautiful weather application with real-time data, full authentication system, interactive maps, and 7-day forecasts. Deployed on Vercel + Railway.",
-    techs: ["Angular 19", "Express", "PostgreSQL", "OpenWeatherMap"],
-    screenBg: "linear-gradient(135deg, #0D111D, #12162A)",
-    screenContent: (
-      <>
-        <div className="absolute top-3 right-[14px] w-[6px] h-[6px] rounded-full bg-[rgba(108,99,255,0.5)] z-[3] shadow-[0_0_8px_rgba(108,99,255,0.4)] animate-pulse-dot" />
-        <div className="font-heading text-[38px] text-[rgba(255,255,255,0.85)] z-[3] tracking-[0.04em] drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)]">
-          ATMOS
-        </div>
-        <div className="font-mono text-[10px] text-[rgba(255,255,255,0.3)] z-[3] tracking-[0.15em]">
-          angular · express · postgresql
-        </div>
-      </>
-    ),
-    links: [
-      { label: "Sitio Web", href: "#", primary: true },
-      { label: "GitHub →", href: "#", primary: false },
-    ],
-  },
-  {
-    title: "Coming next",
-    subtitle: "Something new in development",
-    tag: null,
-    description:
-      "I'm always building. Reach out if you'd like to collaborate or want early access.",
-    techs: ["Stack TBD"],
-    screenBg: "linear-gradient(135deg, #0A0D16, #0F0F1A)",
-    screenContent: (
-      <div className="absolute inset-0 flex items-center justify-center flex-col gap-[10px] z-[3]">
-        <svg
-          width="40"
-          height="40"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="rgba(255,255,255,0.15)"
-          strokeWidth="1.5"
-        >
-          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-        </svg>
-        <span className="font-mono text-[11px] text-[rgba(255,255,255,0.2)] tracking-[0.12em]">
-          Next project
-        </span>
-      </div>
-    ),
-    coming: true,
-    links: [{ label: "Get in touch", href: "#contact", primary: false }],
-  },
-];
+import { EASE } from "../../lib/animations";
+import { projects } from "../../data/projects";
 
 export default function Projects() {
   return (
@@ -75,7 +20,7 @@ export default function Projects() {
             initial={{ x: i === 0 ? -60 : 60, y: 30, opacity: 0 }}
             whileInView={{ x: 0, y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 1, ease: [0.23, 1, 0.32, 1] }}
+            transition={{ duration: 1, ease: EASE }}
           >
             {project.coming && (
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[5] bg-[rgba(255,107,107,0.12)] backdrop-blur-md border border-[rgba(255,107,107,0.2)] px-[22px] py-[10px] rounded-full font-mono text-[11px] font-semibold text-destructive tracking-[0.08em] uppercase">
@@ -83,6 +28,7 @@ export default function Projects() {
               </div>
             )}
 
+            {/* Mockup screen */}
             <div className="relative w-full pt-[60%] bg-transparent">
               <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#3A3A3C] to-[#1C1C1E] rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.6),0_0_0_1px_rgba(255,255,255,0.06)]">
@@ -102,6 +48,7 @@ export default function Projects() {
               <div className="absolute -bottom-[14px] left-[5%] right-[5%] h-7 bg-[radial-gradient(ellipse_at_center,rgba(108,99,255,0.18)_0%,transparent_70%)] blur-xl z-0" />
             </div>
 
+            {/* Card body */}
             <div className={`p-[26px_30px_30px] relative z-[1] ${project.coming ? "opacity-50" : ""}`}>
               {project.tag && (
                 <div className="inline-flex items-center gap-[5px] font-mono text-[10px] font-semibold text-accent tracking-[0.08em] uppercase mb-2">

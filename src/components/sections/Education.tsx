@@ -1,15 +1,7 @@
-"use client";
-
 import { useRef, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import type { CSSProperties, MouseEvent as ReactMouseEvent } from "react";
-
-// ---------- data --------------------------------------------------------
-const certificates = [
-  { title: "Programming Course", institution: "Maxiprograma", year: "2023" },
-  { title: "Full Stack Development", institution: "Online", year: "2024" },
-  { title: "Backend Development", institution: "Online", year: "2024" },
-];
+import { certificates } from "../../data/education";
 
 // ---------- TiltCard ----------------------------------------------------
 const TILT_MAX = 14; // max degrees of rotation
