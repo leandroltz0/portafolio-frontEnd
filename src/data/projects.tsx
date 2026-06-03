@@ -4,6 +4,7 @@ export const projects: Project[] = [
   {
     title: "ATMOS",
     subtitle: "Real-time weather intelligence platform",
+    projectType: "Full Stack",
     tag: "Featured project",
     description:
       "Beautiful weather application with real-time data, full authentication system, interactive maps, and 7-day forecasts. Deployed on Vercel + Railway.",
@@ -22,7 +23,8 @@ export const projects: Project[] = [
     ),
     links: [
       { label: "Sitio Web", href: "#", primary: true },
-      { label: "View Repo", href: "#", primary: false },
+      { label: "View Front-End", href: "#", primary: false },
+      { label: "View Back-End", href: "#", primary: false },
     ],
   },
   {

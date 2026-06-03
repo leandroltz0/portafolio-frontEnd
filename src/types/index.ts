@@ -47,6 +47,7 @@ export interface ProjectLink {
 export interface Project {
   title: string;
   subtitle: string;
+  projectType?: "Frontend" | "Backend" | "Full Stack";
   tag: string | null;
   description: string;
   techs: string[];

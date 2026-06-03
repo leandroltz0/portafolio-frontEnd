@@ -76,14 +76,21 @@ export default function Projects() {
 
             {/* Card body */}
             <div className={`p-[26px_30px_30px] relative z-[1] ${project.coming ? "opacity-50" : ""}`}>
-              {project.tag && (
-                <div className="inline-flex items-center gap-[5px] font-mono text-[10px] font-semibold text-accent tracking-[0.08em] uppercase mb-2">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3 h-3">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                  </svg>
-                  {project.tag}
-                </div>
-              )}
+              <div className="flex items-center gap-3 mb-2 flex-wrap">
+                {project.tag && (
+                  <div className="inline-flex items-center gap-[5px] font-mono text-[10px] font-semibold text-accent tracking-[0.08em] uppercase">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3 h-3">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                    {project.tag}
+                  </div>
+                )}
+                {project.projectType && (
+                  <div className="inline-flex items-center gap-[5px] font-mono text-[10px] font-semibold text-[rgba(255,255,255,0.7)] tracking-[0.08em] uppercase bg-[rgba(255,255,255,0.05)] px-2 py-[2px] rounded-md border border-[rgba(255,255,255,0.1)]">
+                    {project.projectType}
+                  </div>
+                )}
+              </div>
 
               <h3 className={`font-heading text-[clamp(24px,2.5vw,32px)] text-foreground mb-[6px] leading-[1.1] tracking-[0.02em] ${project.coming ? "text-[rgba(240,240,240,0.45)]" : ""}`}>
                 {project.title}
@@ -109,14 +116,15 @@ export default function Projects() {
                 {project.description}
               </p>
 
-              <div className="flex gap-3 flex-wrap">
+              <div className="flex gap-2 lg:gap-3 flex-row overflow-x-auto scrollbar-none pb-1 -mb-1">
                 {project.links.map((link) => {
-                  const isGithub = link.label.toLowerCase().includes("repo") || link.label.toLowerCase().includes("github");
+                  const labelLower = link.label.toLowerCase();
+                  const isGithub = labelLower.includes("repo") || labelLower.includes("github") || labelLower.includes("front-end") || labelLower.includes("back-end");
                   return (
                   <a
                     key={link.label}
                     href={link.href}
-                    className={`inline-flex items-center gap-2 px-6 py-[10px] rounded-full text-[12px] font-semibold tracking-[0.04em] transition-all duration-[300ms] ease-[cubic-bezier(0.23,1,0.32,1)] ${
+                    className={`inline-flex whitespace-nowrap items-center shrink-0 gap-2 px-4 py-[8px] sm:px-5 sm:py-[10px] rounded-full text-[11px] sm:text-[12px] font-semibold tracking-[0.04em] transition-all duration-[300ms] ease-[cubic-bezier(0.23,1,0.32,1)] ${
                       link.primary
                         ? "bg-accent text-white shadow-[0_4px_16px_rgba(108,99,255,0.2)] hover:bg-[#5A52E0] hover:-translate-y-[2px] hover:shadow-[0_8px_28px_rgba(108,99,255,0.35)]"
                         : isGithub
