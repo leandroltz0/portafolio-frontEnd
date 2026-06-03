@@ -22,7 +22,7 @@ export const projects: Project[] = [
     ),
     links: [
       { label: "Sitio Web", href: "#", primary: true },
-      { label: "GitHub →", href: "#", primary: false },
+      { label: "View Repo", href: "#", primary: false },
     ],
   },
   {

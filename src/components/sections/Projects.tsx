@@ -1,6 +1,32 @@
 import { motion } from "motion/react";
 import { EASE } from "../../lib/animations";
 import { projects } from "../../data/projects";
+import { siAngular, siExpress, siPostgresql, siGithub } from "simple-icons";
+import { IconCloud } from "@tabler/icons-react";
+
+const techIconMap: Record<string, any> = {
+  "Angular 19": { type: "simple", icon: siAngular },
+  "Express": { type: "simple", icon: siExpress },
+  "PostgreSQL": { type: "simple", icon: siPostgresql },
+  "OpenWeatherMap": { type: "tabler", icon: IconCloud },
+};
+
+function TechIcon({ name }: { name: string }) {
+  const data = techIconMap[name];
+  if (!data) return null;
+  if (data.type === "simple") {
+    return (
+      <svg viewBox="0 0 24 24" fill={name === "Express" ? "#FFF" : `#${data.icon.hex}`} width="12" height="12">
+        <path d={data.icon.path} />
+      </svg>
+    );
+  }
+  if (data.type === "tabler") {
+    const Icon = data.icon;
+    return <Icon size={12} stroke={2} className="text-[rgba(255,255,255,0.6)]" />;
+  }
+  return null;
+}
 
 export default function Projects() {
   return (
@@ -73,6 +99,7 @@ export default function Projects() {
                     key={tech}
                     className={`inline-flex items-center gap-[5px] px-3 py-1 pl-[7px] rounded-full border border-[rgba(255,255,255,0.08)] font-mono text-[10px] font-medium text-[rgba(255,255,255,0.6)] tracking-[0.01em] bg-[rgba(255,255,255,0.02)] transition-all duration-250 hover:border-[rgba(108,99,255,0.25)] hover:bg-[rgba(108,99,255,0.06)] hover:text-foreground ${project.coming ? "!border-[rgba(255,255,255,0.04)] !text-[rgba(255,255,255,0.25)]" : ""}`}
                   >
+                    <TechIcon name={tech} />
                     {tech}
                   </span>
                 ))}
@@ -83,19 +110,28 @@ export default function Projects() {
               </p>
 
               <div className="flex gap-3 flex-wrap">
-                {project.links.map((link) => (
+                {project.links.map((link) => {
+                  const isGithub = link.label.toLowerCase().includes("repo") || link.label.toLowerCase().includes("github");
+                  return (
                   <a
                     key={link.label}
                     href={link.href}
                     className={`inline-flex items-center gap-2 px-6 py-[10px] rounded-full text-[12px] font-semibold tracking-[0.04em] transition-all duration-[300ms] ease-[cubic-bezier(0.23,1,0.32,1)] ${
                       link.primary
                         ? "bg-accent text-white shadow-[0_4px_16px_rgba(108,99,255,0.2)] hover:bg-[#5A52E0] hover:-translate-y-[2px] hover:shadow-[0_8px_28px_rgba(108,99,255,0.35)]"
+                        : isGithub
+                        ? "bg-black text-white border border-[rgba(255,255,255,0.1)] hover:border-[rgba(255,255,255,0.2)] hover:bg-[#111] hover:-translate-y-[2px]"
                         : "border border-border text-foreground hover:border-destructive hover:bg-[rgba(255,107,107,0.08)] hover:-translate-y-[2px]"
                     }`}
                   >
+                    {isGithub && (
+                      <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+                        <path d={siGithub.path} />
+                      </svg>
+                    )}
                     {link.label}
                   </a>
-                ))}
+                )})}
               </div>
             </div>
           </motion.div>
