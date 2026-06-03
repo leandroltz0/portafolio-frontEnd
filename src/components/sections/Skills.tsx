@@ -27,7 +27,7 @@ import {
   siVscodium,
   siPython,
   siAstro,
-  siJava,
+  siOpenjdk,
   siFastapi,
 } from "simple-icons";
 import { IconBrandAws, IconBrandAzure, IconBrandVscode } from "@tabler/icons-react";
@@ -116,7 +116,7 @@ const skillCategories: SkillCategory[] = [
     accent: "3776AB",
     items: [
       { name: "Spring Boot",icon: siSpring },
-      { name: "Java",       icon: siJava },
+      { name: "Java",       icon: siOpenjdk },
       { name: "AWS",        customIcon: <IconBrandAws size={28} stroke={1.5} />, customHex: "FF9900" },
       { name: "Azure",      customIcon: <IconBrandAzure size={28} stroke={1.5} />, customHex: "0089D6" },
     ],

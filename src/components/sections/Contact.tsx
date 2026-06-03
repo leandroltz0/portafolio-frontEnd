@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { PlaceholdersAndVanishInput } from "@/components/react/ui/placeholders-and-vanish-input";
+import { PlaceholdersAndVanishInput } from "@/components/ui/placeholders-and-vanish-input";
 
 export default function Contact() {
   const placeholders = [
