@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 
 export default function About() {
   return (
-    <section id="about" className="relative pt-0 max-w-[780px] mx-auto px-[clamp(20px,5vw,80px)] mt-10">
+    <section id="about" className="relative pt-0 max-w-[780px] mx-auto px-[clamp(20px,5vw,80px)] mt-[4.5rem] mb-4">
       <motion.div
         className="flex items-center gap-5 mb-6 flex-wrap"
         initial={{ scale: 0.5, opacity: 0 }}
