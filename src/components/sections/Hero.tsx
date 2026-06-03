@@ -129,7 +129,7 @@ export default function Hero() {
         ico.position.x =  0.5 + mouseX * 0.5;
         ico.position.y = -1.8 + mouseY * 0.3;
 
-        renderer.render(scene, camera);
+        renderer?.render(scene, camera);
       };
       animate();
     };

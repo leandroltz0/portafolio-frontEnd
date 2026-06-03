@@ -1,0 +1,73 @@
+14:37:32 [vite] Re-optimizing dependencies because vite config has changed
+14:37:32 [types] Generated 166ms
+14:37:32 [check] Getting diagnostics for Astro files in /home/leandro/Documents/mi-portafolio-frontend...
+[96msrc/components/layout/Navbar.tsx[0m:[93m1[0m:[93m28[0m - [93mwarning[0m[90m ts(6133): [0m'useEffect' is declared but its value is never read.
+
+[7m1[0m import { useRef, useState, useEffect } from "react";
+[7m [0m [93m                           ~~~~~~~~~[0m
+
+[96msrc/components/react/Skills.tsx[0m:[93m30[0m:[93m3[0m - [91merror[0m[90m ts(2305): [0mModule '"simple-icons"' has no exported member 'siJava'.
+
+[7m30[0m   siJava,
+[7m  [0m [91m  ~~~~~~[0m
+[96msrc/components/react/Skills.tsx[0m:[93m27[0m:[93m3[0m - [93mwarning[0m[90m ts(6133): [0m'siVscodium' is declared but its value is never read.
+
+[7m27[0m   siVscodium,
+[7m  [0m [93m  ~~~~~~~~~~[0m
+
+[96msrc/components/sections/Contact.tsx[0m:[93m26[0m:[93m34[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m26[0m   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+[7m  [0m [93m                                 ~~~~~~~~~[0m
+[96msrc/components/sections/Contact.tsx[0m:[93m22[0m:[93m25[0m - [93mwarning[0m[90m ts(6133): [0m'e' is declared but its value is never read.
+
+[7m22[0m   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+[7m  [0m [93m                        ~[0m
+
+[96msrc/components/sections/Experience.tsx[0m:[93m3[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'EASE' is declared but its value is never read.
+
+[7m3[0m import { EASE } from "../../lib/animations";
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/ui/background-beams.tsx[0m:[93m92[0m:[93m25[0m - [93mwarning[0m[90m ts(6133): [0m'path' is declared but its value is never read.
+
+[7m92[0m             {paths.map((path, index) => (
+[7m  [0m [93m                        ~~~~[0m
+
+[96msrc/components/ui/macbook-scroll.tsx[0m:[93m2[0m:[93m28[0m - [93mwarning[0m[90m ts(6133): [0m'useMemo' is declared but its value is never read.
+
+[7m2[0m import React, { useEffect, useMemo, useRef, useState } from "react";
+[7m [0m [93m                           ~~~~~~~[0m
+
+[96msrc/components/ui/placeholders-and-vanish-input.tsx[0m:[93m18[0m:[93m30[0m - [91merror[0m[90m ts(2503): [0mCannot find namespace 'NodeJS'.
+
+[7m18[0m   const intervalRef = useRef<NodeJS.Timeout | null>(null);
+[7m  [0m [91m                             ~~~~~~[0m
+[96msrc/components/ui/placeholders-and-vanish-input.tsx[0m:[93m172[0m:[93m34[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m172[0m   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+[7m   [0m [93m                                 ~~~~~~~~~[0m
+[96msrc/components/ui/placeholders-and-vanish-input.tsx[0m:[93m14[0m:[93m23[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m14[0m   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+[7m  [0m [93m                      ~~~~~~~~~[0m
+
+[96msrc/components/ui/sparkles.tsx[0m:[93m2[0m:[93m24[0m - [93mwarning[0m[90m ts(6133): [0m'useMemo' is declared but its value is never read.
+
+[7m2[0m import React, { useId, useMemo } from "react";
+[7m [0m [93m                       ~~~~~~~[0m
+[96msrc/components/ui/sparkles.tsx[0m:[93m2[0m:[93m8[0m - [93mwarning[0m[90m ts(6133): [0m'React' is declared but its value is never read.
+
+[7m2[0m import React, { useId, useMemo } from "react";
+[7m [0m [93m       ~~~~~[0m
+
+[96msrc/components/ui/timeline.tsx[0m:[93m3[0m:[93m3[0m - [93mwarning[0m[90m ts(6133): [0m'useMotionValueEvent' is declared but its value is never read.
+
+[7m3[0m   useMotionValueEvent,
+[7m [0m [93m  ~~~~~~~~~~~~~~~~~~~[0m
+
+Result (36 files): 
+- 2 errors
+- 0 warnings
+- 12 hints
+

@@ -27,10 +27,9 @@ import {
   siVscodium,
   siPython,
   siAstro,
-  siJava,
   siFastapi,
 } from "simple-icons";
-import { IconBrandAws, IconBrandAzure, IconBrandVscode } from "@tabler/icons-react";
+import { IconBrandAws, IconBrandAzure, IconBrandVscode, IconCoffee } from "@tabler/icons-react";
 import type { ReactNode } from "react";
 
 // ---------- types -------------------------------------------------------
@@ -116,7 +115,7 @@ const skillCategories: SkillCategory[] = [
     accent: "3776AB",
     items: [
       { name: "Spring Boot",icon: siSpring },
-      { name: "Java",       icon: siJava },
+      { name: "Java",       customIcon: <IconCoffee size={28} stroke={1.5} />, customHex: "f89820" },
       { name: "AWS",        customIcon: <IconBrandAws size={28} stroke={1.5} />, customHex: "FF9900" },
       { name: "Azure",      customIcon: <IconBrandAzure size={28} stroke={1.5} />, customHex: "0089D6" },
     ],
