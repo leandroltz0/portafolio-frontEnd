@@ -1,4 +1,5 @@
 import type { Project } from "../types";
+import atmosPreview from "../assets/atmos-preview.png";
 
 export const projects: Project[] = [
   {
@@ -11,18 +12,14 @@ export const projects: Project[] = [
     techs: ["Angular 19", "Express", "PostgreSQL", "OpenWeatherMap"],
     screenBg: "linear-gradient(135deg, #0D111D, #12162A)",
     screenContent: (
-      <>
-        <div className="absolute top-3 right-[14px] w-[6px] h-[6px] rounded-full bg-[rgba(108,99,255,0.5)] z-[3] shadow-[0_0_8px_rgba(108,99,255,0.4)] animate-pulse-dot" />
-        <div className="font-heading text-[38px] text-[rgba(255,255,255,0.85)] z-[3] tracking-[0.04em] drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)]">
-          ATMOS
-        </div>
-        <div className="font-mono text-[10px] text-[rgba(255,255,255,0.3)] z-[3] tracking-[0.15em]">
-          angular · express · postgresql
-        </div>
-      </>
+      <img
+        src={atmosPreview.src}
+        alt="ATMOS weather platform interface"
+        className="absolute inset-0 w-full h-full object-cover z-[3]"
+      />
     ),
     links: [
-      { label: "Sitio Web", href: "#", primary: true },
+      { label: "Sitio Web", href: "https://atmos-front-end.vercel.app", primary: true },
       { label: "View Front-End", href: "https://github.com/leandroltz0/Atmos-web", primary: false },
       { label: "View Back-End", href: "https://github.com/leandroltz0/atmos-backEnd", primary: false },
     ],
