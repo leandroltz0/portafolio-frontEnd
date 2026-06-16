@@ -1,5 +1,6 @@
 import type { Project } from "../types";
 import atmosPreview from "../assets/atmos-preview.png";
+import barberPreview from "../assets/barber-preview.png";
 
 export const projects: Project[] = [
   {
@@ -22,6 +23,28 @@ export const projects: Project[] = [
       { label: "Sitio Web", href: "https://atmos-front-end.vercel.app", primary: true },
       { label: "View Front-End", href: "https://github.com/leandroltz0/Atmos-web", primary: false },
       { label: "View Back-End", href: "https://github.com/leandroltz0/atmos-backEnd", primary: false },
+    ],
+  },
+  {
+    title: "Santillán Barbería",
+    subtitle: "Web completa para barbería independiente",
+    projectType: "Full Stack",
+    tag: "New project",
+    description:
+      "Página web para un barbero con sistema de reseñas, galería de cortes, contacto, visagismo y reservas. Una web muy completa con diseño oscuro y elegante.",
+    techs: ["Astro", "Express", "MongoDB"],
+    screenBg: "linear-gradient(135deg, #1a1a1a, #0d0d0d)",
+    screenContent: (
+      <img
+        src={barberPreview.src}
+        alt="Santillán Barbería website interface"
+        className="absolute inset-0 w-full h-full object-cover z-[3]"
+      />
+    ),
+    links: [
+      { label: "Sitio Web", href: "https://barbersantillan.vercel.app/", primary: true },
+      { label: "View Front-End", href: "https://github.com/leandroltz0/SantillanBarber", primary: false },
+      { label: "View Back-End", href: "https://github.com/leandroltz0/barberSantillan-backEnd", primary: false },
     ],
   },
   {

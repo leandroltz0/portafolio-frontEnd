@@ -1,7 +1,7 @@
 import { useRef, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import type { CSSProperties, MouseEvent as ReactMouseEvent } from "react";
-import { certificates } from "../../data/education";
+import { certificates } from "../data/education";
 
 // ---------- TiltCard ----------------------------------------------------
 const TILT_MAX = 14; // max degrees of rotation
@@ -104,6 +104,7 @@ function TiltCard({
 // ---------- main section ------------------------------------------------
 export default function Education() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   return (
     <section
@@ -135,32 +136,44 @@ export default function Education() {
           >
             <TiltCard
               className="bg-surface border border-border rounded-[var(--radius,16px)] overflow-hidden"
-              onClick={() => setLightboxOpen(true)}
+              onClick={() => {
+                setLightboxIndex(i);
+                setLightboxOpen(true);
+              }}
             >
               {/* image / placeholder area */}
               <div className="relative w-full aspect-[4/3] overflow-hidden bg-[#0D1420] group">
-                <div
-                  className="w-full h-full flex flex-col items-center justify-center gap-2 text-muted-foreground
-                                bg-gradient-to-br from-[#0D1420] via-[#0A0F1A] to-[#0F1A2E]"
-                  style={{ transform: "translateZ(20px)", transformStyle: "preserve-3d" }}
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="w-10 h-10 opacity-25"
+                {cert.image ? (
+                  <img
+                    src={cert.image}
+                    alt={cert.title}
+                    className="w-full h-full object-cover"
+                    style={{ transform: "translateZ(20px)", transformStyle: "preserve-3d" }}
+                  />
+                ) : (
+                  <div
+                    className="w-full h-full flex flex-col items-center justify-center gap-2 text-muted-foreground
+                                  bg-gradient-to-br from-[#0D1420] via-[#0A0F1A] to-[#0F1A2E]"
+                    style={{ transform: "translateZ(20px)", transformStyle: "preserve-3d" }}
                   >
-                    <rect x="3" y="3" width="18" height="18" rx="2" />
-                    <circle cx="12" cy="10" r="3" />
-                    <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                  </svg>
-                  <span className="font-mono text-[10px] tracking-[0.1em] uppercase opacity-25">
-                    Certificate
-                  </span>
-                </div>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="w-10 h-10 opacity-25"
+                    >
+                      <rect x="3" y="3" width="18" height="18" rx="2" />
+                      <circle cx="12" cy="10" r="3" />
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    </svg>
+                    <span className="font-mono text-[10px] tracking-[0.1em] uppercase opacity-25">
+                      Certificate
+                    </span>
+                  </div>
+                )}
 
                 {/* hover overlay */}
                 <div
@@ -237,24 +250,34 @@ export default function Education() {
               transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
               className="max-w-[90vw] max-h-[90vh] rounded-2xl shadow-[0_20px_80px_rgba(0,0,0,0.6)]
                          bg-[#0D1420] border border-[rgba(255,255,255,0.06)]
-                         flex items-center justify-center p-10"
+                         overflow-hidden"
             >
-              <div className="flex flex-col items-center gap-4 text-muted-foreground">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  className="w-16 h-16 opacity-25"
-                >
-                  <rect x="3" y="3" width="18" height="18" rx="2" />
-                  <circle cx="12" cy="10" r="3" />
-                  <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                </svg>
-                <span className="font-mono text-sm tracking-wider opacity-50">
-                  Certificate image not yet available
-                </span>
-              </div>
+              {certificates[lightboxIndex]?.image ? (
+                <img
+                  src={certificates[lightboxIndex].image}
+                  alt={certificates[lightboxIndex].title}
+                  className="w-full h-full object-contain"
+                />
+              ) : (
+                <div className="flex items-center justify-center p-10">
+                  <div className="flex flex-col items-center gap-4 text-muted-foreground">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      className="w-16 h-16 opacity-25"
+                    >
+                      <rect x="3" y="3" width="18" height="18" rx="2" />
+                      <circle cx="12" cy="10" r="3" />
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    </svg>
+                    <span className="font-mono text-sm tracking-wider opacity-50">
+                      Certificate image not yet available
+                    </span>
+                  </div>
+                </div>
+              )}
             </motion.div>
           </motion.div>
         )}

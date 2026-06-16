@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { IconBrandGithub, IconBrandLinkedin, IconMail } from "@tabler/icons-react";
-import { EASE, EASE_SPRING, scaleIn, fadeUp } from "../../lib/animations";
-import { socialLinks } from "../../data/social";
+import { EASE, EASE_SPRING, scaleIn, fadeUp } from "../lib/animations";
+import { socialLinks } from "../data/social";
 
 // Map label → tabler icon
 const SOCIAL_ICONS: Record<string, React.ReactNode> = {
@@ -23,9 +23,9 @@ export default function About() {
       >
         <div className="relative shrink-0">
           <div className="absolute inset-0 rounded-full bg-[rgba(108,99,255,0.25)] blur-xl scale-125" />
-          <div className="relative w-20 h-20 rounded-full bg-gradient-to-br from-accent via-destructive to-accent p-[2px] shadow-[0_0_0_3px_rgba(108,99,255,0.15)]">
+          <div className="relative w-28 h-28 rounded-full bg-gradient-to-br from-accent via-destructive to-accent p-[2px] shadow-[0_0_0_3px_rgba(108,99,255,0.15)]">
             <div className="w-full h-full rounded-full bg-background flex items-center justify-center overflow-hidden">
-              <span className="font-heading text-[28px] text-accent">LM</span>
+              <img src="/photo.jpeg" alt="Leandro Maciel" className="w-full h-full object-cover object-[50%_35%]" />
             </div>
           </div>
         </div>

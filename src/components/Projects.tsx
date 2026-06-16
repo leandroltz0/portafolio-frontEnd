@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
-import { EASE } from "../../lib/animations";
-import { projects } from "../../data/projects";
-import { siAngular, siExpress, siPostgresql, siGithub } from "simple-icons";
+import { EASE } from "../lib/animations";
+import { projects } from "../data/projects";
+import { siAngular, siExpress, siPostgresql, siGithub, siAstro, siMongodb } from "simple-icons";
 import { IconCloud } from "@tabler/icons-react";
 
 const techIconMap: Record<string, any> = {
@@ -9,6 +9,8 @@ const techIconMap: Record<string, any> = {
   "Express": { type: "simple", icon: siExpress, color: "#FFFFFF" },
   "PostgreSQL": { type: "simple", icon: siPostgresql, color: `#${siPostgresql.hex}` },
   "OpenWeatherMap": { type: "tabler", icon: IconCloud },
+  "Astro": { type: "simple", icon: siAstro, color: "#BC52EE" },
+  "MongoDB": { type: "simple", icon: siMongodb, color: "#47A248" },
 };
 
 function TechIcon({ name }: { name: string }) {

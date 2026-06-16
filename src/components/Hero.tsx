@@ -1,6 +1,6 @@
 import { useEffect, useRef, useMemo } from "react";
 import { motion } from "motion/react";
-import { EASE } from "../../lib/animations";
+import { EASE } from "../lib/animations";
 import type * as THREE from "three";
 
 // Static data — defined outside component to avoid re-creation on render

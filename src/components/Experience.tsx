@@ -1,7 +1,7 @@
 import { useScroll, useTransform, motion } from "motion/react";
 import { useRef } from "react";
-import { EASE } from "../../lib/animations";
-import { TECH_ICONS, experienceData } from "../../data/experience";
+import { EASE } from "../lib/animations";
+import { TECH_ICONS, experienceData } from "../data/experience";
 
 // ---------- TechBadge ----------------------------------------------------
 function TechBadge({ tag }: { tag: string }) {

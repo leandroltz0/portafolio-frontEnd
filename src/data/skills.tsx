@@ -4,7 +4,7 @@ import {
   siNodedotjs, siExpress, siNestjs, siPython, siFastapi,
   siMysql, siMongodb, siPostgresql, siDocker,
   siFigma, siFramer, siGit, siGithub, siGitlab,
-  siSpring, siOpenjdk,
+  siSpring,
 } from "simple-icons";
 import { IconBrandAws, IconBrandAzure, IconBrandVscode } from "@tabler/icons-react";
 import type { SkillCategory } from "../types";
@@ -57,7 +57,7 @@ export const skillCategories: SkillCategory[] = [
     accent: "3776AB",
     items: [
       { name: "Spring Boot", icon: siSpring },
-      { name: "Java",        icon: siOpenjdk },
+      { name: "Java", customIcon: <svg viewBox="0 0 24 24" width={28} height={28} fill="none" stroke="#E76F00" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 8h1a4 4 0 0 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" x2="6" y1="2" y2="4"/><line x1="10" x2="10" y1="2" y2="4"/><line x1="14" x2="14" y1="2" y2="4"/></svg>, customHex: "E76F00" },
       { name: "AWS",         customIcon: <IconBrandAws   size={28} stroke={1.5} />, customHex: "FF9900" },
       { name: "Azure",       customIcon: <IconBrandAzure size={28} stroke={1.5} />, customHex: "0089D6" },
     ],

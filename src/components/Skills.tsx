@@ -1,8 +1,8 @@
 import { motion } from "motion/react";
 import type { CSSProperties } from "react";
-import { EASE, cardEnter, chipEnter } from "../../lib/animations";
-import { skillCategories } from "../../data/skills";
-import type { SkillItem } from "../../types";
+import { EASE, cardEnter, chipEnter } from "../lib/animations";
+import { skillCategories } from "../data/skills";
+import type { SkillItem } from "../types";
 
 // ---------- Helpers -------------------------------------------------------
 /** Returns a CSS-safe hex (with #).

@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "motion/react";
-import { navItems, mobileNavItems } from "../../data/navigation";
+import { navItems, mobileNavItems } from "../data/navigation";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -30,11 +30,11 @@ export default function Navbar() {
           animate={{ y: visible ? 0 : -100, opacity: visible ? 1 : 0 }}
           exit={{ opacity: 0, y: -100 }}
           transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
-          className="fixed top-4 inset-x-0 mx-auto z-[5000] flex items-center justify-center px-4"
+          className="fixed top-4 right-2 z-[5000] flex items-center justify-center px-4 md:left-1/2 md:right-auto md:-translate-x-1/2 md:mx-auto"
         >
           <div className="flex items-center justify-between gap-2 rounded-full border border-[rgba(108,99,255,0.08)] bg-[rgba(8,11,24,0.7)] backdrop-blur-[28px] saturate-[1.5] shadow-[0_0_60px_rgba(108,99,255,0.03),inset_0_1px_0_rgba(255,255,255,0.04)] px-[18px] py-[6px] min-w-0 w-auto max-w-full md:min-w-[420px]">
-            <a href="#hero" className="font-heading text-lg text-accent tracking-[0.06em] leading-none mr-2 shrink-0">
-              LM
+            <a href="#hero" className="mr-2 shrink-0 flex items-center">
+              <img src="/logo.png" alt="LM" className="h-7 w-auto" />
             </a>
 
             <div className="hidden md:flex items-center gap-1">
