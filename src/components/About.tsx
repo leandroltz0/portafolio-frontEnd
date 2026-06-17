@@ -47,14 +47,14 @@ export default function About() {
       </motion.h2>
 
       <motion.p
-        className="text-[clamp(15px,1.2vw,17px)] leading-[1.7] text-muted-foreground max-w-[600px] mb-7"
+        className="text-[clamp(15px,1.2vw,17px)] leading-[1.7] text-muted-foreground max-w-[600px] mb-7 tracking-[0.06em]"
         variants={fadeUp}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         transition={{ duration: 0.7, delay: 0.1, ease: EASE }}
       >
-        <strong className="text-accent font-mono font-bold">2 años</strong> de experiencia. Desarrollador web creando aplicaciones frontend y backend — desde dashboards en <strong className="text-foreground font-semibold">Angular</strong> y <strong className="text-foreground font-semibold">React</strong> hasta APIs con <strong className="text-foreground font-semibold">Express</strong> y bases de datos <strong className="text-foreground font-semibold">PostgreSQL</strong>. Cada proyecto es una oportunidad de resolver problemas reales con código limpio y diseño pensado.
+        <strong className="text-accent font-mono font-bold mx-[5px]">2 años</strong> de experiencia. Desarrollador web creando aplicaciones frontend y backend — desde dashboards en <strong className="text-foreground font-semibold mx-[5px]">Angular</strong> y <strong className="text-foreground font-semibold mx-[5px]">React</strong> hasta APIs con <strong className="text-foreground font-semibold mx-[5px]">Express</strong> y bases de datos <strong className="text-foreground font-semibold mx-[5px]">PostgreSQL</strong>. Cada proyecto es una oportunidad de resolver problemas reales con código limpio y diseño pensado.
       </motion.p>
 
       <motion.div
