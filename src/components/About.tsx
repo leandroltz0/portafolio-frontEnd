@@ -25,7 +25,7 @@ export default function About() {
           <div className="absolute inset-0 rounded-full bg-[rgba(108,99,255,0.25)] blur-xl scale-125" />
           <div className="relative w-28 h-28 rounded-full bg-gradient-to-br from-accent via-destructive to-accent p-[2px] shadow-[0_0_0_3px_rgba(108,99,255,0.15)]">
             <div className="w-full h-full rounded-full bg-background flex items-center justify-center overflow-hidden">
-              <img src="/photo.jpeg" alt="Leandro Maciel" className="w-full h-full object-cover object-[50%_35%]" />
+              <img src="/photo.png" alt="Leandro Maciel" className="w-full h-full object-cover object-[50%_35%]" />
             </div>
           </div>
         </div>

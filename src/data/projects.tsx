@@ -10,7 +10,7 @@ export const projects: Project[] = [
     tag: "Featured project",
     description:
       "Beautiful weather application with real-time data, full authentication system, interactive maps, and 7-day forecasts. Deployed on Vercel + Railway.",
-    techs: ["Angular 19", "Express", "PostgreSQL", "OpenWeatherMap"],
+    techs: ["Angular 19", "NestJS", "PostgreSQL", "OpenWeatherMap"],
     screenBg: "linear-gradient(135deg, #0D111D, #12162A)",
     screenContent: (
       <img

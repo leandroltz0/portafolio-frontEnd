@@ -1,11 +1,12 @@
 import { motion } from "motion/react";
 import { EASE } from "../lib/animations";
 import { projects } from "../data/projects";
-import { siAngular, siExpress, siPostgresql, siGithub, siAstro, siMongodb } from "simple-icons";
+import { siAngular, siNestjs, siPostgresql, siGithub, siAstro, siMongodb, siExpress } from "simple-icons";
 import { IconCloud } from "@tabler/icons-react";
 
 const techIconMap: Record<string, any> = {
   "Angular 19": { type: "simple", icon: siAngular, color: "#DD0031" },
+  "NestJS": { type: "simple", icon: siNestjs, color: `#${siNestjs.hex}` },
   "Express": { type: "simple", icon: siExpress, color: "#FFFFFF" },
   "PostgreSQL": { type: "simple", icon: siPostgresql, color: `#${siPostgresql.hex}` },
   "OpenWeatherMap": { type: "tabler", icon: IconCloud },
