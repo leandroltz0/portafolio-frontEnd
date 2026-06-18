@@ -1,6 +1,7 @@
 import type { Project } from "../types";
 import atmosPreview from "../assets/atmos-preview.png";
 import barberPreview from "../assets/barber-preview.png";
+import animalGymPreview from "../assets/animalgym-preview.png";
 
 export const projects: Project[] = [
   {
@@ -45,6 +46,27 @@ export const projects: Project[] = [
       { label: "Sitio Web", href: "https://barbersantillan.vercel.app/", primary: true },
       { label: "View Front-End", href: "https://github.com/leandroltz0/SantillanBarber", primary: false },
       { label: "View Back-End", href: "https://github.com/leandroltz0/barberSantillan-backEnd", primary: false },
+    ],
+  },
+  {
+    title: "Animal Gym",
+    subtitle: "Web para gimnasio con video hero y tienda online",
+    projectType: "Frontend",
+    tag: "New project",
+    description:
+      "Sitio web completo para un gimnasio con hero animado con video de fondo, sección de servicios, galería de fotos, horarios, tienda y contacto. Diseño oscuro e impactante con React y SCSS.",
+    techs: ["React"],
+    screenBg: "linear-gradient(135deg, #0a0a0a, #1a0505)",
+    screenContent: (
+      <img
+        src={animalGymPreview.src}
+        alt="Animal Gym website interface"
+        className="absolute inset-0 w-full h-full object-cover object-left-top z-[3]"
+      />
+    ),
+    links: [
+      { label: "Sitio Web", href: "https://animal-gym-front-end.vercel.app/", primary: true },
+      { label: "View Front-End", href: "https://github.com/leandroltz0/animalGym-frontEnd", primary: false },
     ],
   },
   {
