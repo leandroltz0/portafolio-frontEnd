@@ -1,7 +1,6 @@
 import type { Project } from "../types";
 import atmosPreview from "../assets/atmos-preview.png";
 import barberPreview from "../assets/barber-preview.png";
-import animalGymPreview from "../assets/animalgym-preview.png";
 
 export const projects: Project[] = [
   {
@@ -59,7 +58,7 @@ export const projects: Project[] = [
     screenBg: "linear-gradient(135deg, #0a0a0a, #1a0505)",
     screenContent: (
       <img
-        src={animalGymPreview.src}
+        src="/proyects/Screenshot From 2026-06-18 17-09-21.jpg"
         alt="Animal Gym website interface"
         className="absolute inset-0 w-full h-full object-cover object-left-top z-[3]"
       />

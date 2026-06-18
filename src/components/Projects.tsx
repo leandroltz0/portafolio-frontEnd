@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { EASE } from "../lib/animations";
 import { projects } from "../data/projects";
-import { siAngular, siNestjs, siPostgresql, siGithub, siAstro, siMongodb, siExpress } from "simple-icons";
+import { siAngular, siNestjs, siPostgresql, siGithub, siAstro, siMongodb, siExpress, siReact } from "simple-icons";
 import { IconCloud } from "@tabler/icons-react";
 
 const techIconMap: Record<string, any> = {
@@ -12,6 +12,7 @@ const techIconMap: Record<string, any> = {
   "OpenWeatherMap": { type: "tabler", icon: IconCloud },
   "Astro": { type: "simple", icon: siAstro, color: "#BC52EE" },
   "MongoDB": { type: "simple", icon: siMongodb, color: "#47A248" },
+  "React": { type: "simple", icon: siReact, color: `#${siReact.hex}` },
 };
 
 function TechIcon({ name }: { name: string }) {
