@@ -104,11 +104,11 @@ export default function Contact() {
             required
             className="w-full px-4 py-3 rounded-lg bg-[rgba(255,255,255,0.03)] border border-border text-foreground focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all duration-200 appearance-none cursor-pointer"
           >
-            <option value="" disabled selected>Project type</option>
-            <option value="website">Website</option>
-            <option value="web_app">Web Application</option>
-            <option value="ecommerce">E-commerce</option>
-            <option value="other">Other</option>
+            <option value="" disabled selected className="bg-background text-foreground">Project type</option>
+            <option value="website" className="bg-background text-foreground">Website</option>
+            <option value="web_app" className="bg-background text-foreground">Web Application</option>
+            <option value="ecommerce" className="bg-background text-foreground">E-commerce</option>
+            <option value="other" className="bg-background text-foreground">Other</option>
           </select>
         </div>
 
