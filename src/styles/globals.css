@@ -57,12 +57,17 @@
   color: #fff;
 }
 
-body {
-  cursor: none;
-}
-
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  touch-action: pan-y; /* Disables pinch zoom and horizontal pan on mobile */
+}
+
+body {
+  cursor: none;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
 
 @keyframes bounce-y {
