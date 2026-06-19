@@ -63,6 +63,7 @@ export const projects: Project[] = [
         className="absolute inset-0 w-full h-full object-cover object-left-top z-[3]"
       />
     ),
+    inProgress: true,
     links: [
       { label: "Sitio Web", href: "https://animal-gym-front-end.vercel.app/", primary: true },
       { label: "View Front-End", href: "https://github.com/leandroltz0/animalGym-frontEnd", primary: false },

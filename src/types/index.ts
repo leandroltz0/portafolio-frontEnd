@@ -54,6 +54,7 @@ export interface Project {
   screenBg: string;
   screenContent: ReactNode;
   coming?: boolean;
+  inProgress?: boolean;
   links: ProjectLink[];
 }
 

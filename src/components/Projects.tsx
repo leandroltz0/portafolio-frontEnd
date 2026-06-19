@@ -82,7 +82,7 @@ export default function Projects() {
             <div className={`p-[26px_30px_30px] relative z-[1] ${project.coming ? "opacity-50" : ""}`}>
               <div className="flex items-center gap-3 mb-2 flex-wrap">
                 {project.tag && (
-                  <div className="inline-flex items-center gap-[5px] font-mono text-[10px] font-semibold text-accent tracking-[0.08em] uppercase">
+                  <div className="inline-flex items-center gap-[5px] font-mono text-[10px] font-semibold text-accent tracking-[0.08em] uppercase leading-none py-1">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3 h-3">
                       <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                     </svg>
@@ -90,8 +90,14 @@ export default function Projects() {
                   </div>
                 )}
                 {project.projectType && (
-                  <div className="inline-flex items-center gap-[5px] font-mono text-[10px] font-semibold text-[rgba(255,255,255,0.7)] tracking-[0.08em] uppercase bg-[rgba(255,255,255,0.05)] px-2 py-[2px] rounded-md border border-[rgba(255,255,255,0.1)]">
+                  <div className="inline-flex items-center gap-[5px] font-mono text-[10px] font-semibold text-[rgba(255,255,255,0.7)] tracking-[0.08em] uppercase bg-[rgba(255,255,255,0.05)] px-[10px] pt-[5px] pb-[4px] leading-none rounded-md border border-[rgba(255,255,255,0.1)]">
                     {project.projectType}
+                  </div>
+                )}
+                {project.inProgress && (
+                  <div className="inline-flex items-center gap-[6px] font-mono text-[10px] font-semibold text-[#EAB308] tracking-[0.08em] uppercase bg-[rgba(234,179,8,0.08)] px-[10px] pt-[5px] pb-[4px] leading-none rounded-md border border-[rgba(234,179,8,0.15)]">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#EAB308] animate-pulse"></span>
+                    En proceso
                   </div>
                 )}
               </div>
