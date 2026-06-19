@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { IconBrandGithub, IconBrandLinkedin, IconMail } from "@tabler/icons-react";
+import { IconBrandGithub, IconBrandLinkedin, IconMail, IconBrandWhatsapp } from "@tabler/icons-react";
 import { EASE, EASE_SPRING, scaleIn, fadeUp } from "../lib/animations";
 import { socialLinks } from "../data/social";
 
@@ -7,6 +7,7 @@ import { socialLinks } from "../data/social";
 const SOCIAL_ICONS: Record<string, React.ReactNode> = {
   GitHub:   <IconBrandGithub   size={16} stroke={1.5} />,
   LinkedIn: <IconBrandLinkedin size={16} stroke={1.5} />,
+  WhatsApp: <IconBrandWhatsapp size={16} stroke={1.5} />,
   Email:    <IconMail          size={16} stroke={1.5} />,
 };
 
