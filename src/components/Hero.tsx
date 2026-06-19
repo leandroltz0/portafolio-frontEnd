@@ -257,9 +257,11 @@ export default function Hero() {
       {/* Bottom gradient fade */}
       <div className="absolute bottom-0 left-0 w-full h-[15vh] bg-gradient-to-t from-background to-transparent pointer-events-none z-[2]" />
 
-      <div className="absolute bottom-7 left-1/2 -translate-x-1/2 z-[3] flex flex-col items-center gap-[6px] text-muted-foreground text-[9px] tracking-[0.15em] uppercase opacity-35 animate-bounce-y">
-        Scroll
-        <span className="block w-px h-7 bg-gradient-to-b from-muted-foreground to-transparent" />
+      <div className="absolute bottom-7 left-0 w-full flex justify-center z-[3] pointer-events-none">
+        <div className="flex flex-col items-center gap-[6px] text-muted-foreground text-[9px] uppercase opacity-35 animate-bounce-y">
+          <span className="tracking-[0.15em] -mr-[0.15em]">Scroll</span>
+          <span className="block w-px h-7 bg-gradient-to-b from-muted-foreground to-transparent" />
+        </div>
       </div>
     </section>
   );
